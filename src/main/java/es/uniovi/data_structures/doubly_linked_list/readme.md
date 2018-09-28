@@ -130,3 +130,23 @@ public boolean contains(T data) {
   return indexOf(data) != -1;
 }
 ```
+
+#### isEmpty implementation:
+```java
+public boolean isEmpty() {
+  return this.head == null;
+}
+```
+
+### toString implementation:
+
+```java
+public String toString() {
+  Node<T> iterator = this.head;
+  String returnValue = "";
+  while(iterator.getNextNode() != null) {
+    returnValue += iterator.getContent().toString() + " -> "
+  }
+  return returnValue;
+}
+```
