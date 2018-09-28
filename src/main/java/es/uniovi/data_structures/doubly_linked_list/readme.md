@@ -122,7 +122,7 @@ public int indexOf(Node<T> iterator, T data, int i) {
   return indexOf(iterator.getNextNode(), data, i++); // Another iteration over the next element.
 }
 ```
-
+The above method will return the index in the list where the data introduced is found by first time.
 
 #### contains implementation:
 ```java
@@ -130,6 +130,7 @@ public boolean contains(T data) {
   return indexOf(data) != -1;
 }
 ```
+By using the indexOf method the contains returns true if the list contains the data introduced, false otherwise.
 
 #### isEmpty implementation:
 ```java
@@ -137,6 +138,7 @@ public boolean isEmpty() {
   return this.head == null;
 }
 ```
+Simply indicates whether the list id empty or not.
 
 ### toString implementation:
 
@@ -150,3 +152,4 @@ public String toString() {
   return returnValue;
 }
 ```
+Will construct an string in the format ´A -> B -> c ->´.
