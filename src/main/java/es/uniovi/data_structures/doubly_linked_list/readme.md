@@ -152,4 +152,4 @@ public String toString() {
   return returnValue;
 }
 ```
-Will construct an string in the format ´A -> B -> c ->´.
+Will construct an string in the format `A -> B -> c ->`.
