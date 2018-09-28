@@ -38,3 +38,37 @@ public void add(T data) {
   newNode.setPreviousNode(this.tail); // Seting the previous node of the new last node as the previous last one.
   this.tail = newNode; // Updating the tail.
 }
+```
+
+If we dont have a tail implemented in our list because of design constraints we can alwais perform an iterative/recursive algorithm to add the data.
+
+```java
+public void add(T data) {
+  Node<T> newNode = new Node<T>(data); // Creating the new node from the content.
+  Node<T> pointer = this.head; // Pointer to iterate over the list.
+  
+  // Traversing the list.
+  while(pointer.getNextNode()!=null) {
+    pointer = pointer.getNextNode();
+  }
+  // Adding and updating links.
+  pointer.setNextNode(newNode); // Adding the new node to the end of the list.
+  newNode.setPreviousNode(pointer); // Updating the link of the previous last node to the new one.
+}
+```
+
+```java
+public void add(T data) {
+  this.add(this.head, data);
+}
+
+private void add(Node<T> iterator, T data) {
+  if(iterator.getNextNode() != null) {
+    this.add(iterator.getNextNode, data); // Recursive call.
+  } else {
+    Node<T> newNode = new Node<T>(data); // Creating the new node from the content.
+    iterator.setNextNode(newNode); // Adding the new node to the end of the list.
+    newNode.setPreviousNode(iterator); // Updating the link of the previous last node to the new one.
+  }
+}
+```
