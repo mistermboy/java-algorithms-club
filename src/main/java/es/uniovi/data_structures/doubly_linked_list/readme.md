@@ -42,6 +42,7 @@ public void add(T data) {
 
 If we dont have a tail implemented in our list because of design constraints we can alwais perform an iterative/recursive algorithm to add the data.
 
+#### Iterative version
 ```java
 public void add(T data) {
   Node<T> newNode = new Node<T>(data); // Creating the new node from the content.
@@ -57,6 +58,7 @@ public void add(T data) {
 }
 ```
 
+#### Recursive version
 ```java
 public void add(T data) {
   this.add(this.head, data);
@@ -70,5 +72,61 @@ private void add(Node<T> iterator, T data) {
     iterator.setNextNode(newNode); // Adding the new node to the end of the list.
     newNode.setPreviousNode(iterator); // Updating the link of the previous last node to the new one.
   }
+}
+```
+
+## Removing elements
+To remove an element we have to be more careful because the node to remove most probably wont be nor the first nor the last. So here is the recursive implementation of the algorithm to remove the emelemnts from the list.
+
+```java
+public boolean remove(T data) {
+  return remove(this.head, data);
+}
+
+private boolean remove(Node<T> iterator, T data) {
+  if(iterator == null) {
+    return false; // The data to remove is not in the list.
+  }
+  if(iterator.getContent().equals(data)) {
+    // Seting the previous node next pointer to the next of the node to remove.
+    iterator.getPreviousNode().setNextNode(iterator.getNextNode());
+    
+    // If the node to remove was not the last...
+    if(iterator.getNextNode() != null) {
+      // Set the previous link of the next node to the previous of the node to remove.
+      iterator.getNextNode().setPreviousNode(iterator.getPreviousNode());
+    }
+    
+    // Return true to indicate that the node was succesfully removed.
+    return true;
+  }
+  // Still looking for the element to remove.
+  return this.remove(iterator.getNextNode(), data);
+}
+```
+
+## Checking if an element is in the list.
+For that we have some methods like contains or indexOf, we will re-use the implementation.
+
+#### indexOf implementation:
+```java
+public int indexOf(T data) {
+  return indexOf(this.head, data, 0);
+}
+
+public int indexOf(Node<T> iterator, T data, int i) {
+  if(iterator == null)
+    return -1; // The data is not in the list.
+  if(iterator.getContent().equals(data))
+    return i; // The index of the data.
+  return indexOf(iterator.getNextNode(), data, i++); // Another iteration over the next element.
+}
+```
+
+
+#### contains implementation:
+```java
+public boolean contains(T data) {
+  return indexOf(data) != -1;
 }
 ```
