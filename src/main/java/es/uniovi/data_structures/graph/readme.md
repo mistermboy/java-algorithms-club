@@ -7,7 +7,7 @@ For example in the avobe picture shows the nodes 1 2 3 4 and 5, the number in th
 
 ## GraphNode class
 A good way to start with graphs is taking a look to [GraphNode](https://github.com/computer-science-uniovi/java-algorithms/blob/master/src/main/java/es/uniovi/data_structures/graph/GraphNode.java) class.
-If you look at the definition of the class, you can see that this class extends of <T extends Comparable<T>>. That means that is a generic class. So you can use generic objects in this class while this obects extends Comparable. If you need more information about generic classes check the [java documentation](https://docs.oracle.com/javase/tutorial/java/generics/types.html)
+If you look at the definition of the class, you can see that this class extends <T extends Comparable<T>>. That means that is a generic class. So you can use generic objects in this class while this obects extends Comparable. If you need more information about generic classes check the [java documentation](https://docs.oracle.com/javase/tutorial/java/generics/types.html)
 
 A node just has to store its content and a boolean value to indicate wheter it has been visited or not. This visited value will be used later for minimum cost paths problems resolution.
 
