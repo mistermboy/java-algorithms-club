@@ -1,20 +1,15 @@
-# Welcome to the Java Algorithms and Data Structures!
-Based in [uniovi.ed](https://github.com/ZenMaster91/uniovi.ed).
+# Welcome to Java Algorithms and Data Structures!
+**Based in:** [thewilly/uniovi.ed](https://github.com/thewilly/uniovi.ed).
 
-Here you'll find implementations of popular algorithms and data structures in everyone's favorite new language Java, with detailed explanations of how they work.
+Here you'll find implementations of popular algorithms and data structures in everyone's favorite new language, Java, with detailed explanations of how they work.
 
 If you're a computer science student who needs to learn this stuff for exams -- or if you're a self-taught programmer who wants to brush up on the theory behind your craft -- you've come to the right place!
 
 The goal of this project is to explain how algorithms work. The focus is on clarity and readability of the code, not on making a reusable library that you can drop into your own projects. That said, most of the code should be ready for production use but you may need to tweak it to fit into your own codebase.
 
-Code is compatible Eclipse Oxigen, Gradle and Java 1.8. We'll keep this updated with the latest version of Java.
+Code is compatible Eclipse Oxigen, Maven and Java 1.8. We'll keep this updated with the latest version of Java.
 
 😍 Suggestions and contributions are welcome! 😍
-
-## How to import into Eclipse Oxigen?
-```
-File > Import > Gradle > Gradle Project > Select the project forlder > done.
-```
 
 ## Data Structures
 The choice of data structure for a particular task depends on a few things.
@@ -25,10 +20,13 @@ Second, it matters what particular operations you'll be performing most, as cert
 
 Most of the time using just the built-in Array, Dictionary, and Set types is sufficient, but sometimes you may want something more fancy...
 
+> Remember that on each package you have a detailed explanation of its content, theory most of it.
+
 ### Trees
 - Heap. A binary tree stored in an array, so it doesn't use pointers. Makes a great priority queue.
 Fibonacci Heap
-- B-Tree. A self-balancing search tree, in which nodes can have more than two children.
+- B-Tree. A B-tree is a balanced tree, but it is not a binary tree. Nodes have more children, which increases per-node search time but decreases the number of nodes the search needs to visit
+- AVL Tree. An AVL tree is a self-balancing binary search tree, balanced to maintain O(log n) height.
 
 ### Hashing
 - Hash Table. Allows you to store and retrieve objects by a key. This is how the dictionary type is usually implemented.
