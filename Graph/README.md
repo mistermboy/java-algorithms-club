@@ -8,3 +8,4 @@ A graph data structure may also associate to each edge some edge value, such as 
 ## To start with graphs
 A good way to start with graphs is having a look to [GraphNode](https://github.com/thewilly/java-algorithms-club/blob/master/Graph/GraphNode.java) class.
 If you look at the definition of the class, you can see that this class extends of <T extends Comparable<T>>. That means that is a generic class. So you can use generic objects in this class while this obects will extend Comparable. If you need more information about generic classes you can have a look in the [java documentation](https://docs.oracle.com/javase/tutorial/java/generics/types.html)
+The rest of the class is simple. There is a T(generic object) that represents the content of the node and there is a boolean variable to know if this Node has been visited.
