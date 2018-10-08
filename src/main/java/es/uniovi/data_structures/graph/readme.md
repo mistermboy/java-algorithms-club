@@ -19,6 +19,34 @@ A node just has to store its content and a boolean value to indicate wheter it h
 ```
 
 ## Graph class
-The graph class will be a collection of nodes with relations between them and costs (weights) for the relations between them (paths). For that porpouse we will use a list to store the nodes, and two matrices, one for the paths and another for the weights.
+The graph class will be a collection of nodes with relations between them and costs (weights) for the relations between them (paths). For that porpouse we will use a list to store the nodes, and two matrices, one for the paths and another for the weights. Also we will use another four collections to support Dijkstra and Floyd algorithms.
+
+```java
+ 
+	/** The nodes. */
+	List<GraphNode<T>> nodes;
+	
+	/** The edges. */
+	private boolean[][] edges;
+	
+	/** The weight. */
+	private double[][] weight;
+
+  // Floyd attributes.
+
+	/** The a. */
+	private double[][] A;
+	
+	/** The p. */
+	private int[][] P;
+
+  // Dijkstra attributes
+  
+	/** The d. */
+	private double[] D;
+	
+	/** The pd. */
+	private int[] PD;
+```
 
 
