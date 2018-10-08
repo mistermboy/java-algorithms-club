@@ -25,26 +25,20 @@ The graph class will be a collection of nodes with relations between them and co
  
 	/** The nodes. */
 	List<GraphNode<T>> nodes;
-	
 	/** The edges. */
 	private boolean[][] edges;
-	
 	/** The weight. */
 	private double[][] weight;
-
-  // Floyd attributes.
-
+	
+ 	 // Floyd attributes.
 	/** The a. */
 	private double[][] A;
-	
 	/** The p. */
 	private int[][] P;
 
-  // Dijkstra attributes
-  
+  	// Dijkstra attributes
 	/** The d. */
 	private double[] D;
-	
 	/** The pd. */
 	private int[] PD;
 ```
